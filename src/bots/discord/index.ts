@@ -11,6 +11,9 @@ export default () => {
     });
 
     client.on(Events.MessageCreate, (msg) => {
+        if (msg.channelId !== process.env['DISCORD_WATCH_CHANNEL_ID']) {
+            return;
+        }
         console.log('====== Message received =====');
         console.log(JSON.stringify(msg));
         twitter().notify(msg.content).then(() => {
