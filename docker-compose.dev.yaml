@@ -1,0 +1,12 @@
+version: "3"
+services:
+  bot:
+    build: .
+    restart: no
+    volumes:
+      - ./src:/app/src
+      - ./node_modules:/app/node_modules
+      - ./nodemon.json:/app/nodemon.json
+    command: npm run dev
+    environment:
+      CHOKIDAR_USEPOLLING: 1

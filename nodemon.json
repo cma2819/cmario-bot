@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "ignore": ["*.test.ts", "**/fixtures/**"],
+  "watch": ["./src/"],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
